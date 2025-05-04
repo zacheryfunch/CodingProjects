@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player</title>
+    <style>
+        #movieDetails {
+            margin-top: 20px;
+        }
+
+        #movieDetails img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        .mediaButton {
+            margin-top: 10px;
+            display: none; /* Initially hide both buttons */
+        }
+    </style>
+</head>
+<body>
+    <div id="MovieSearch">
+    <label for="movieTitle">Enter Movie Title:</label>
+    <input type="text" id="movieTitle" placeholder="e.g., The Marvels">
+    <button onclick="searchAndDisplayDetails('movie')">Search and Display Movie Details</button>
+    <button class="mediaButton" id="playMovieButton" onclick="playMedia('movie')">Play Movie</button>
+<br>
+<div id="tvSearch">
+    <label for="tvTitle">Enter TV Show Title:</label>
+    <input type="text" id="tvTitle" placeholder="e.g., Breaking Bad">
+    <button onclick="searchAndDisplayDetails('tv')">Search and Display TV Show Details</button>
+  <button class="mediaButton" id="playTvButton" onclick="playMedia('tv')">Play TV Show</button>
+  </div>
+
+  <div id="mediaDetails"></div>
+
+    
+  
+
+    <script>
+        let mediaID; // Global variable to store media ID
+        let mediaType; // Global variable to store media type (movie or tv)
+
+        async function searchAndDisplayDetails(type) {
+            const mediaTitleInput = document.getElementById(type === 'movie' ? 'movieTitle' : 'tvTitle');
+            const mediaTitle = mediaTitleInput.value;
+
+            try {
+                const mediaDetails = await getMediaDetails(mediaTitle, type);
+
+                if (mediaDetails && mediaDetails.imdbID) {
+                    // Save the media ID and type globally
+                    mediaID = mediaDetails.imdbID;
+                    mediaType = type;
+
+                    // Display media details
+                    displayMediaDetails(mediaDetails);
+                } else {
+                    alert(`${type === 'movie' ? 'Movie' : 'TV show'} not found. Please try again.`);
+                }
+            } catch (error) {
+                console.error(`Error fetching ${type === 'movie' ? 'movie' : 'TV show'} details:`, error);
+                alert(`An error occurred. Please try again later.`);
+            }
+        }
+
+        async function getMediaDetails(title, type) {
+            const apiKey = "3bfccb71";
+            const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(title)}&type=${type}`);
+            const data = await response.json();
+            return data;
+        }
+
+
+
+
+        
+        function displayMediaDetails(details) {
+            const mediaDetailsContainer = document.getElementById("mediaDetails");
+            mediaDetailsContainer.innerHTML = `
+                <h2>${details.Title} (${details.Year})</h2>
+                <p><strong>Rated:</strong> ${details.Rated}</p>
+                <p><strong>Released:</strong> ${details.Released}</p>
+                <p><strong>Runtime:</strong> ${details.Runtime}</p>
+                <p><strong>Genre:</strong> ${details.Genre}</p>
+                <p><strong>Director:</strong> ${details.Director}</p>
+                <p><strong>Actors:</strong> ${details.Actors}</p>
+                <p><strong>Plot:</strong> ${details.Plot}</p>
+                <p><strong>Language:</strong> ${details.Language}</p>
+                <p><strong>Country:</strong> ${details.Country}</p>
+                <p><strong>IMDb Rating:</strong> ${details.imdbRating}</p>
+                <p><strong>Rotten Tomatoes Rating:</strong> ${details.Ratings.find(rating => rating.Source === "Rotten Tomatoes")?.Value || 'N/A'}</p>
+                <img src="${details.Poster}" alt="${details.Title} Poster">
+            `;
+
+            // Show the corresponding play button after displaying details
+            document.getElementById("playMovieButton").style.display = mediaType === 'movie' ? "block" : "none";
+            document.getElementById("playTvButton").style.display = mediaType === 'tv' ? "block" : "none";
+        }
+
+        function playMedia(type) {
+            if (mediaID) {
+                // Construct the URL for the media player API using the saved media ID and type
+                const apiUrl = `https://vidsrc.to/embed/${type}/${mediaID}`;
+
+                // Open the media player in a new window or tab
+                window.open(apiUrl, "_blank");
+            } else {
+                alert(`No ${type === 'movie' ? 'movie' : 'TV show'} ID available. Please
