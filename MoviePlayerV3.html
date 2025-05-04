@@ -7,18 +7,12 @@
     <style>
         body{background-color: gray;}
         #movieDetails {
-            margin-top: 20px;
-        }
-
+            margin-top: 20px;}
         #movieDetails img {
             max-width: 100%;
             height: auto;
-            margin-top: 10px;
-        }
-
-        #playButton {
-            margin-top: 10px;
-        }
+            margin-top: 10px;}
+        #playButton {margin-top: 10px;}
     </style>
 </head>
 <body>
@@ -29,13 +23,8 @@
 
     <div id="movieDetails"></div>
 
-
-
-
-
-
-
     <script>
+        //This Version was built Dec 6, 2023 by Zach
         let imdbID; // Global variable to store IMDb ID
 
         async function searchAndDisplayDetails() {
@@ -66,9 +55,6 @@
             const data = await response.json();
             return data;
         }
-
-
-
 
         function displayMovieDetails(details) {
             const movieDetailsContainer = document.getElementById("movieDetails");
