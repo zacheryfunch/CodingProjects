@@ -1,5 +1,5 @@
 from random import randint
-# warning remove the debug that tells where the enemy is
+
 board = []
 
 for x in range(0, 5):
