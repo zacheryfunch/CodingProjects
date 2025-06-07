@@ -1,0 +1,46 @@
+/*Todo: 
+x-Give borders to the buttons, display.
+x-add animation to the buttons.
+-position the buttons
+
+To Solve: 
+-Adapt to Mobile Phone and Computers.
+
+Note: .class #id 
+*/
+body    {text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: medium;
+display:inline-block;
+justify-content: center;
+text-align: center;
+}
+#timer{    
+    border: 2px solid rgb(0, 13, 128);
+    text-align: center;}
+
+button{
+    padding: 5px 10px ;
+    margin: 0;
+    border: 2px solid black;
+    background-color: Yellow;
+width:auto;}
+button:hover{
+    background-color: blue;}
+button:active {
+  background-color: #8e3e3e;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);}
+
+#actionDisplay{    
+    border: 3px solid rgb(61, 187, 109);
+    display: inline-block;
+margin: 1 px }
+/* unused ids
+#start  {}
+#stop   {}
+#reset  {}
+#display    {}
+
+#currentRound   {}
+#ProgramSelect{} */
