@@ -1,0 +1,67 @@
+<html>
+    <head><title>Timer WebApp0.1</title>
+    <link rel="stylesheet" type="text/css"href="style.css">
+    <script src="script.js" defer></script>
+    </head>
+<body>
+
+<div id="timer">
+    <div id="timerDisplay">00:00:00</div>
+    <div id="buttons">
+        <button id="start">Start</button> 
+        <button id="stop">Stop</button> 
+        <button id="reset">Reset</button>
+        </div>
+    </div>
+
+    <div id="display">
+    <input id="actionDisplay"placeholder="Wait 1min">Wait 1 Min </div>
+    <div id="currentRound">Round 1 Step 1</div>
+    <input type="list" id="programSelect" placeholder="Select Program">
+
+</div>
+<!--/*    IDs used list (Dom Respected positions)
+     timer(all of the timer elements),
+        timerDisplay(00:00:00),
+        buttons(div of the 3 buttons), 
+            start, stop, reset,
+        display(div of the words and menus), 
+            actionDisplay(text Wait 1 min says what to do),
+            currentRound(Round 1 Step 1 2do update it),
+            programSelect(drop down menu to select which timer to run) */-->
+<!--/*   Let's make a Timer Webapp. Goal:
+        Goal: I want to make a timer for ChronoDodo. a Book on helping get your kids
+         to sleep independently.
+         So my current need is to have a timer that runs for: 
+          Round 1 : 1 min, display 10sec visit ,
+                    2minutes, display 10sec visit,
+                    3 minutes. 
+                     2min calin
+            Round 2 : 3min, 3min, 3min, 2min hug
+            Round 3 : 4min, 4min, 4min, 2min hug
+            Round 4+ : 4min, 4min, 4min, 2min hug.
+        - I would like the whole webapp to be small enough to fit on a phone screen.
+        - I would like a small space to explain the next action.
+        - I would like a drop down menu to select what round we're on.
+         for a first version i will only use the round for my kids
+         but eventually i want to include all of rounds.
+        - Day and age settings with prerecorded Rounds order, guiding the user.
+*/-->        
+<!--/*      +Plan:
+        v0.0 Code JS to change the HTML to count seconds.
+        v0.1 
+        v0.2 Make a Timer that can count down from 1 minute.
+        v0.3 Add multiple choices 1/2/3/4 minutes in a dropdown menu.
+        v0.9 add an indication of the end of the timer. (ex: sound,vibration, popup)
+        
+        v1.0 Add credit to the author of the book.
+        v1.1 Add an affilate amazon purchase link to get the digital book.
+        v2.0 Contact the author and propose a collaboration. Maybe include quotes from the book.
+            perhaps make an audiobook of their book and translate it to english(it's in french for now.)
+        +Todo: 
+        -Create the visual in HTML; What buttons do i want? Prototyle, this can change later.
+        -Add the JS to make it work.
+        -Adjust the CSS Stylesheet. (on hover, Button colors, font, placement, etc.)
+*/-->
+</body>
+</html>
