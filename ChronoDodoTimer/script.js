@@ -30,20 +30,31 @@ const intervalId = setInterval(() => {
             programSelect(drop down menu to select which timer to run)*/
 
 //
-let actionDisplay=document.querySelector("#actionDisplay");
+let actionDisplay=document.querySelector("#actionDisplay"); //2do optimise speed by getElementById selector
 let start=document.querySelector("#start");
+let stop=document.querySelector("#stop");
 let timerDisplay=document.querySelector("#timerDisplay");
 let secondAmount
-let second = 1; // =time%60
-let minute = 10; //=time/60
+let time= 125; // stored in seconds
+  
+
 start.onclick= function startTimer(){
+    let second = (time%60).toString().padStart(2, "0"); 
+    let minute = Math.floor(time / 60);
     console.log("Start button clicked");
-        console.log(second);        console.log(minute + second);
+    console.log("time is: " + time);
+    console.log("seconds" + second);
+    console.log(minute + " min" + second + " sec");
     console.log(`${minute} : ${second}`);
-    actionDisplay.textContent="Round 1, Step1 Timer started";
+    actionDisplay.textContent="Round 1, Step 1 Timer started" + "time is :" + time;;
     timerDisplay.textContent=`${minute} m: ${second} s`;
 };
-
+stop.onclick= function stopTimer(){
+    console.log("Stop button clicked");
+        time++
+    actionDisplay.textContent="Round 1, Step 1 Timer started" + "time is :" + time;
+    timerDisplay.textContent=`${minute} m: ${second} s`;
+};
 /*function runs every sec; it updates the timerDisplay by one 
  !Possible problem displaying 00:1 instead of 00:01  --Todo later ->    .padStart(2, '0')
  Todo:
