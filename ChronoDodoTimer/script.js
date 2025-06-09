@@ -17,7 +17,9 @@ x---Fix amount of zeros in timer display                 => .padStart(2, "0") ad
 x---how to turn the integer into a string                => number.String()
 --how to stop,reset,update timer from list?              => clearInterval() stops the timer but how does it work?
                     const myInterval = setInterval(myTimer, 1000); clearInterval(myInterval);
-//--Add a dropdown menu to select the timer to run.       => <select> element with options                              
+
+--Add a dropdown menu to select the timer to run.       => <select> element with options
+                              
 */
 
 /*    Info: list of used ids (Dom Respected positions)
@@ -42,16 +44,19 @@ set.onclick= function setTimer(){
     actionDisplay.textContent="Round 1, Step 1 Timer started" + " time is :" + time;;
     timerDisplay.textContent=`${minute} m: ${second} s`;
 };
+let intervalTimer
 
 start.onclick= function startTimer(){
-    setInterval(() => {
+    intervalTimer = setInterval(() => {
         time--; //1 second less (1000 milliseconds)
 
         let second = (time%60).toString().padStart(2, "0"); 
         let minute = Math.floor(time / 60).toString().padStart(2, "0");
         timerDisplay.textContent=`${minute} m: ${second} s`;
+        actionDisplay.textContent="Round 1, Step 1 Timer started" + " time is :" + time;
     }, 1000);
-};
+}; 
+
 /*debugging variables 
     console.log("Start button clicked");
     console.log("time is: " + time);
@@ -60,14 +65,9 @@ start.onclick= function startTimer(){
     console.log(`${minute} : ${second}`);
 */
 stop.onclick= function stopTimer(){
-    console.log("Stop button clicked");
-        time++
-    actionDisplay.textContent="Round 1, Step 1 Timer started" + "time is :" + time;
-    timerDisplay.textContent=`${minute} m: ${second} s`;
+clearInterval(intervalTimer);
 };
-reset.onclick= function resetTimer(){
-    
-};
+
 /*function runs every sec; it updates the timerDisplay by one 
  !Possible problem displaying 00:1 instead of 00:01  --Todo later ->    .padStart(2, '0')
  Todo:
