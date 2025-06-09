@@ -4,11 +4,15 @@ Todo list:
 -Code the timer functionality:
 --Select the different elements.
 --Modify the timer display.
----Figure out how to change the timer text.
----Figure out how to make the timer countdown seconds
+---Figure out how to change the timer text.             =>Reassign the value of the html element with document.querySelector(#id)
+---Figure out how to make the timer countdown seconds   =>setInterval(() => {},1000); //Executes a function every 1000 milliseconds (1sec)
+----Assign a variable to the amount of seconds and insert it into the setInterval. 
+// Execute a function every 1 second
+const intervalId = setInterval(() => {
+    console.log('Interval executed every 1 second');
+}, 1000);
+
 --Make the buttons interact with the display.
-
-
 -Add a Timer End () : notification inwindow popup
 --add with a sound
 --add vibration.
@@ -29,8 +33,23 @@ Todo list:
 let actionDisplay=document.querySelector("#actionDisplay");
 let start=document.querySelector("#start");
 let timerDisplay=document.querySelector("#timerDisplay");
+let secondAmount
+let second = 1; // =time%60
+let minute = 10; //=time/60
 start.onclick= function startTimer(){
     console.log("Start button clicked");
-    actionDisplay.textContent="Timer started";
-    timerDisplay.textContent="00:00:10";
+        console.log(second);        console.log(minute + second);
+    console.log(`${minute} : ${second}`);
+    actionDisplay.textContent="Round 1, Step1 Timer started";
+    timerDisplay.textContent=`${minute} m: ${second} s`;
 };
+
+/*function runs every sec; it updates the timerDisplay by one 
+ !Possible problem displaying 00:1 instead of 00:01  --Todo later ->    .padStart(2, '0')
+ Todo:
+ -define second minute value
+ -update timerDisplay.
+ -define Timer end event
+
+*/
+const secondCounter = setInterval(() => {},1000);
