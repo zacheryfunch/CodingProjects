@@ -1,0 +1,40 @@
+4.  Arborescence finale du projet 
+/beweb/ 
+│ 
+├── index.html 
+├── style.css 
+├── script.js 
+├── /images/ 
+│   ├── main.png         
+<img src="images/main.png" id="main-image-image" alt="une femme qui sourit devant un ordinateur, cette image est derriere le text">
+│   ├── steps-icon-1.png 
+│   ├── steps-icon-2.png 
+│   ├── steps-icon-3.png 
+│   ├── article-image-1.png 
+│   ├── article-image-2.png 
+│   └── article-image-3.png 
+
+
+Todo-------------------------
+x-put images in background
+x-center all the text
+-align the steps to be horizontal next to each other
+ 	-> flexbox
+-add next and previous buttons for carosel
+#carouselBack #carouselForward
+-code carosel
+-make the sombre button prettier  -> change to a circle
+
+-footer is dark
+-header is light
+
+
+
+--carousel image left text right
+carousel-item 	flexbox
+
+.left .right 
+
+
+
+!+steps need to be side by side

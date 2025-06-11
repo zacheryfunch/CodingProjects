@@ -1,0 +1,256 @@
+
+/*General */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: Crete Round, serif;
+}
+
+.wrapper {
+    width: 940px;
+    margin: 0 auto; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+section{
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    flex-direction: row;
+    align-items: center;
+}
+
+
+/*Navigation 
+• Style horizontal 
+• Liens avec majuscules et gras 
+• Bouton toggle visuel pour mode sombre avec animation glissante  */
+
+a {
+    font-weight: bold;
+    font-size:xx-small;
+}
+.slider {
+
+    width: 10px;
+    height: 10px;
+    background: rgb(201, 70, 70);
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.9s;
+}
+#darkmode-toggle{
+    width: 30px;
+    height: 20px;
+    border: solid 0px rgb(0, 0, 0);
+    background: rgb(186, 221, 223);
+    text-align: left;
+    border-radius: 25%;
+}
+.dark-mode .slider {
+    transform: translateX(30px);
+}
+.dark-mode {
+    background: #222;
+    color: rgb(255, 0, 0);
+}
+
+/*Sections 
+x• Fond principal avec image 
+• Étapes illustrées avec image en fond + texte centré 
+• Carrousel positionné au centre de l’écran, avec boutons « et » 
+• Formulaire aligné verticalement*/
+
+#main-image{
+    width:800px;
+    height:400px;
+    background-image: url('images/main.png');}
+
+
+
+
+#contactForm0 {
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+}
+#contactForm1 {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+#contactForm2{ 
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    padding-left: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+
+
+/*2.4. Boutons 
+• .button-1 → bouton principal rouge 
+• .button-2 → boutons du carrousel 
+• .button-3 → bouton du formulaire */
+.button-1 {
+    background: #e63a3a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+.button-2 {
+    width: 30px;
+    height: 30px;
+    background: gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: x-large;
+}
+
+.button-3 {
+    background: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+
+/*2.5. Responsive (media queries) 
+• Gérer l’adaptabilité du carrousel sur : 
+o Tablettes : 900px 
+o Mobiles : 600px 
+• Adapter les blocs pour qu’ils s’empilent en colonne*/
+
+#contactForm1{
+    border:#b3b1ae solid 2px;}
+
+footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+
+
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* unnecessary
+.button-main-image {
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+*/
+
+
+
+
+
+/*Bonus */
+#main-image-image {
+height: auto;
+width: 500px;
+}
+
+.icon {
+    height: 50px;
+    width:auto;
+}
+nav a:hover {
+    color: #ffa600;
+}
+#button:hover {
+    color: #ff7300;
+}
+nav a:click {
+    color: #ff0000; 
+}
+
+
+
+/*carousel code */
+.carousel-bg{ /*size of the images*/
+    width: 200px;
+    height: 200px ;
+}
+/*.carousel {
+}*/
+
+.carousel-item {
+    display: flex;
+    text-align: center;
+    width: 800px;
+    height: 600px ;
+}
+
+.carousel {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+.carousel-item.active {
+    opacity: 1
+}
+
+
+.button-2 {
+
+    transform: translateY(-50%);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.input{ border: solid 1px rgba(56, 18, 126, 0.781);}
+
+
