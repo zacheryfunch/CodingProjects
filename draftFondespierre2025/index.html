@@ -9,37 +9,49 @@
 <body>
 <div class="wrapper">
     <header><!-- entete du page Logo, Nav et Sombre Button -->
-        <h1>BeWeb<span class="orange">.</span></h1>
+        <div id="headerLeft"><h1>BeWeb<span class="orange">.</span></h1></div>
+        <div id="headerRight">
         <nav> 
             <ul>
-                <li><a href="#main-image">Accueil</a></li>
-                <li><a href="#steps">Parcours</a></li>
-                <li><a href="#possibility">Carrière</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#main-image" class="navLinks">Accueil</a></li>
+                <li><a href="#steps" class="navLinks">Parcours</a></li>
+                <li><a href="#possibility" class="navLinks">Carrière</a></li>
+                <li><a href="#contact" class="navLinks">Contact</a></li>
                 <li><button id="darkmode-toggle" aria-label="Activer le mode sombre"><span class="slider"></span></button></li>
             </ul>
         </nav>
+        </div>
     </header>
 
     <section id="main-image"> <!--Main image phrase d'accroche avec un grande image du fond : une femme qui sourit devant un ordinateur-->
-        <h2>ORGANISEZ VOTRE APPRENTISSAGE <strong>SUR MESURE</strong></h2>
-        <button id="button" class="button-main-image">Par ici</button>
+        <div id="main-image-title-box">
+            <h2 id="main-image-title">
+                ORGANISEZ VOTRE APPRENTISSAGE 
+                <strong>SUR MESURE</strong>
+            </h2>
+            <button class="button-1">
+                Par ici
+            </button>
+        </div>
     </section>
     <section id="steps"> <!-- Ici les etapes Planifier Organiser et Développer -->
         <div class="step-item">
-            <h3>Planifier</h3>
+            
             <img src="images/steps-icon-1.png"  alt="Icône de liste de contrôle : planchette à pince avec cases cochées." class="icon">
-            <p id="Planifier">Confiez-nous vos rêves de réussite : nous trouverons la formation qui comblera vos attentes.</p>
+            <h3>Planifier</h3>
+            <p id="Planifier" class="stepsText">Confiez-nous vos rêves de réussite : nous trouverons la formation qui comblera vos attentes.</p>
         </div>
         <div class="step-item">
-            <h3>Organiser</h3>
+            
             <img src="images/steps-icon-2.png" alt="Illustration d'une étagère avec plusieurs compartiments contenant des objets de formes variées." class="icon">
-            <p id="Organiser">Bénéficiez de l'expertise de nos spécialistes de chaque parcours. Ils vous accompagneront dans la réalisation de votre parcours.</p>
+            <h3>Organiser</h3>
+            <p id="Organiser" class="stepsText">Bénéficiez de l'expertise de nos spécialistes de chaque parcours. Ils vous accompagneront dans la réalisation de votre parcours.</p>
         </div>
         <div class="step-item">
-            <h3>Développer</h3>
+            
             <img src="images/steps-icon-3.png" alt="Illustration d'une personne assise à un bureau, travaillant sur un ordinateur portable affichant des symboles de programmation." class="icon">
-            <p id="Developper">
+            <h3>Développer</h3>
+            <p id="Developper" class="stepsText">
             Nous nous chargerons de faire en sorte que vous deveniez développeur à travers des projets proches de la réalité.    
             </p>
         </div>
@@ -78,12 +90,14 @@
             </div>
 
             <div id="carousel-item-3" class="carousel-item">
-                <div class= "left"></div>
+                <div class= "left">
                     <img src="images/article-image-3.png" alt="un table en bois brun avec un chapeau de ceremonie de diplome carré et un diplomé enroulé avec un ribbon rouge" class="carousel-bg">
+                </div>
                 <div class= "right">
                     <h3>TSSR (niveau 5)</h3>
                 
-                    <p id="TSSR">Le Titre Professionnel Technicien Supérieur Systèmes et Réseaux (TSSR) est une certification de niveau 5 (BAC+2) qui forme des spécialistes en gestion et sécurisation des infrastructures informatiques. Les apprenants acquièrent des compétences en exploitation des réseaux, administration des systèmes, virtualisation et cybersécurité. Cette formation permet d’accéder à des postes tels que technicien réseau, administrateur systèmes ou support informatique dans divers secteurs numériques
+                    <p id="TSSR">Le Titre Professionnel Technicien Supérieur Systèmes et Réseaux (BAC+2)
+                    La formation prépare des spécialistes en gestion des réseaux, administration des systèmes, virtualisation et cybersécurité, ouvrant la voie à des carrières en informatique.
                     <a href="buttonTSSR" class="button-carousel">Plus d'infos</a>
                 </p>
             </div>
