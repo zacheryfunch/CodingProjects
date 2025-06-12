@@ -7,6 +7,17 @@ body {
 h1 {
     font-family: Crete Round, serif;
 }
+h2{text-transform: uppercase;
+
+    display: flex;
+    font-size:large;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
 
 .wrapper {
     width: 940px;
@@ -17,19 +28,6 @@ h1 {
     margin: 0;
     padding: 0;
 }
-/*section{
-    display: flex;
-    justify-content: center; 
-    flex-direction: column;
-    align-items: center;
-}*/
-header {
-    text-align: center;
-    display: flex;
-    justify-content: center; 
-    flex-direction: row;
-    align-items: center;
-}
 
 
 /*Navigation 
@@ -37,25 +35,60 @@ x• Style horizontal
 x• Liens avec majuscules et gras 
 x• Bouton toggle visuel pour mode sombre avec animation glissante  */
 
+header {
+    text-align: left;
+    display: flex ;
+    justify-content: flex-start; 
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+}
+#headerLeft {  
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    position: absolute;
+    padding-left: 10%; /*Help it be centered away from left edge*/
+}
+#headerRight {
+    display: flex;
+    margin-left: auto;
+    padding-right: 25%;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+.navLinks{
+    font-size: large;
+    color:gray;
+}
+nav ul li {
+    margin: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 a {
     font-weight: bold;
     font-size:xx-small;
 }
 .slider {
-    width: 10px;
-    height: 10px;
-    background: rgb(201, 70, 70);
+    width: 14px;
+    height: 14px;
+    background: #FA3605;
     border-radius: 50%;
     position: absolute;
-    transition: transform 0.9s;
+    transition: transform 0.3s ease-in-out;
 }
 #darkmode-toggle{
-    width: 30px;
-    height: 20px;
-    border: solid 0px rgb(0, 0, 0);
-    background: rgb(186, 221, 223);
+    width: 45px;
+    height: 25px;
+    border: solid 1px #FFE2D6;
+    background: #FFE2D6;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
     text-align: left;
-    border-radius: 25%;
+    padding: 2px;
 }
 .dark-mode .slider {
     transform: translateX(30px);
@@ -77,17 +110,17 @@ outside id #step     inside class .step-item
     flex-direction: row;
     justify-content: center; 
     align-items: center;
-    /*flex-wrap: nowrap;                      REMOVE THIS LATER */
 }
 .step-item{
     display: flex ;
-    text-align: center;
     flex-direction: column;
-      /* width: 150px;                         Adjust as needed */
+    text-align: center;
+    justify-content: center; 
+    width: 150px;                        
 }
 .icon{
-    width: 20px;
-    height: 20px;
+    width: 100px;
+    height: 100px;
 }
 
 
@@ -103,6 +136,20 @@ outside id #step     inside class .step-item
 height: auto;
 width: 500px;
 }
+
+#main-image-title-box {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    width: 100%;
+    height: 200px;  /*Ensures a fixed height */
+}
+#main-image-title {
+    text-transform: uppercase;
+    max-width: 200px; /* Limits the width */
+    text-align: center; /* Ensures text stays centered */
+}
+
 /*contact form */
 #contact{
     display: flex;
@@ -141,13 +188,18 @@ width: 500px;
 /*2.4. Boutons 
 • .button-1 → bouton principal rouge 
 • .button-2 → boutons du carrousel 
-• .button-3 → bouton du formulaire */
+• .button-3 → bouton du formulaire 
+button-2    <div id="carouselBack" class="button-2">
+            <div id="carouselForward" class="button-2">
+*/
 .button-1 {
-    background: #e63a3a;
+    background: #D81243;
     color: white;
     padding: 10px 20px;
     border: none;
 }
+
+
 .button-2 {
     width: 30px;
     height: 30px;
@@ -161,10 +213,31 @@ width: 500px;
     border-radius: 50%;
     cursor: pointer;
     font-size: x-large;
+    transform: translateY(-50%);
+    padding: 10px;
+    opacity: 50%;
+}
+#carouselBack {
+    display:flex;
+    position: absolute;
+    top: 50%; /* Centers vertically */
+    left: 50px; /* Sticks to the left */
+    transform: translateY(-50%);
+    z-index: 10; /* Ensures it's above the carousel */
 }
 
+#carouselForward {
+    display:flex;
+    position: absolute;
+    top: 50%; /* Centers vertically */
+    right: 50px; /* Sticks to the right */
+    transform: translateY(-75%);
+    z-index: 10; /* Keeps it visible */
+}
+
+
 .button-3 {
-    background: #ff0000;
+    background: #D51246;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -190,21 +263,8 @@ nav ul {
     list-style: none;
 }
 
-nav ul li {
-    margin: 0 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-/* unnecessary
-.button-main-image {
-    background: red;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
 
-*/
+
 
 
 
@@ -213,10 +273,7 @@ nav ul li {
 /*Bonus */
 
 
-.icon {
-    height: 50px;
-    width:auto;
-}
+
 nav a:hover {
     color: #ffa600;
 }
@@ -229,59 +286,63 @@ nav a:click {
 
 
 
-/*carousel code section id="possibility"
-div id="carouselBack" class="button-2"         = back Button
-    id="carousel-item-1" class="carousel-item" = Carosel items 1 - 3
-    <div class="left">
-    <div class="right">
-    id="carousel-item-2" class="carousel-item"
-    id="carousel-item-3" class="carousel-item"
-div id="carouselForward" class="button-2"      = forward Button
+/*Carousel instructions: 
+Responsive (media queries) 
+• Gérer l’adaptabilité du carrousel sur : 
+o Tablettes : 900px 
+o Mobiles : 600px 
+• Adapter les blocs pour qu’ils s’empilent en colonne 
+
+
+carousel code indention in Dom
+section id="possibility"
+    div id="carouselBack" class="button-2"         = back Button
+    div class="carousel"
+        id="carousel-item-1" class="carousel-item" = Carosel items 1 - 3 each has div class="left"   div class="right" 
+        id="carousel-item-2" class="carousel-item" = .left .right
+        id="carousel-item-3" class="carousel-item" = .left .right
+    div id="carouselForward" class="button-2"      = forward Button
 
 */
-.carousel-bg{ /*size of the images*/
-    width: 200px;
-    height: 200px ;
+#possibility { 
+    position: relative;
+    width: 100%;
+   /*max-width: 100vw;*/
+    height: 25%;
+    
 }
-/*.carousel {
-}*/
-
-.carousel-item {
-    display: flex;
-    text-align: center;
-    width: 800px;
-    height: 600px ;
+.carousel-bg {
+    width: 90%; /* Makes it take up half the screen */
+    height: 100%; /* Maintains aspect ratio */
+    display: block;
 }
-
 .carousel {
     position: relative;
-    width: 800px;
-    height: 600px;
-    overflow: hidden;
+    height: 300px;
+    background-color:#EFEFEF;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
-
 .carousel-item {
-    position: absolute;
-    width: 100%;
     transition: opacity 0.5s ease-in-out;
     opacity: 0;
+    display: flex;
+    text-align: center;
+    position: absolute;
+    height: 300px ;
+    width: 100%;
+    background-color: white;
 }
+.left{width:50%;}
+.right{width:50%;}
 .carousel-item.active {
     opacity: 1
 }
 
+/* end of carousel  */
 
-.button-2 {
 
-    transform: translateY(-50%);
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-}
 
-.prev { left: 10px; }
-.next { right: 10px; }
 
 .input{ border: solid 1px rgba(56, 18, 126, 0.781);}
 
