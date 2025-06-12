@@ -3,37 +3,25 @@
 body {
     font-family: Arial, sans-serif;
 }
-
 h1 {
-    font-family: Crete Round, serif;
+    font-family: "Crete Round", serif;
 }
-h2{text-transform: uppercase;
-
-    display: flex;
-    font-size:large;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
-}
-
 .wrapper {
     width: 940px;
     margin: 0 auto; 
 }
-
 * {
     margin: 0;
     padding: 0;
 }
 
 
-/*Navigation 
+/*Navigation Section
+Instructions
 x• Style horizontal 
 x• Liens avec majuscules et gras 
-x• Bouton toggle visuel pour mode sombre avec animation glissante  */
+x• Bouton toggle visuel pour mode sombre avec animation glissante  
+*/
 
 header {
     text-align: left;
@@ -42,19 +30,26 @@ header {
     flex-direction: row;
     align-items: center;
     padding-left: 20px;
+    height: 60px;
+}
+#Logo{
+    display:flex;
+    margin-right: 50px;
+    color:#484544;
+    font-weight:900;
 }
 #headerLeft {  
     display: flex;
     justify-content: left;
     align-items: flex-end;
-    position: absolute;
-    padding-left: 10%; /*Help it be centered away from left edge*/
+    padding-left: 10%;
+    padding-right: 10%;
 }
 #headerRight {
     display: flex;
-    margin-left: auto;
     padding-right: 25%;
     width: 200px;
+    margin-left: auto;
     justify-content: center;
     align-items: center;
 }
@@ -98,73 +93,123 @@ a {
     color: rgb(255, 0, 0);
 }
 
-/*Sections =steps
+
+/*Sections section =#steps
 x• Fond principal avec image 
-• Étapes illustrées avec image en fond + texte centré 
-• Carrousel positionné au centre de l’écran, avec boutons « et » 
+x• Étapes illustrées avec image en fond + texte centré 
+x• Carrousel positionné au centre de l’écran, avec boutons « et » 
 • Formulaire aligné verticalement
 outside id #step     inside class .step-item
+
+Sections Dom structure:
+section id="steps"
+    div class="step-item"
+        img
+        h3 class="stepH3"
+        p
+    E * 3
 */
 #steps{
     display: flex;
     flex-direction: row;
     justify-content: center; 
     align-items: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 .step-item{
     display: flex ;
     flex-direction: column;
     text-align: center;
     justify-content: center; 
-    width: 150px;                        
+    width: 150px; 
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;                       
 }
 .icon{
     width: 100px;
     height: 100px;
 }
+.stepH3{margin: 10px;}
 
 
-/*Main image */
+/*Main image Section with page Title:
+Main image Dom structure:
+section id="#main-image"
+    div id="#main-image-title-box"
+        div id="main-title-left"        proved to be unnecessary
+            h2 id="#main-image-title"
+            strong                      debugged a stacking error
+        divid="main-title-right"
+            button class=".button-1"
+*/
 #main-image{
-    width:800px;
+    width:100%;
     height:400px;
     background-image: url('images/main.png');
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a dark overlay */
+    background-blend-mode: darken; /* Blends the overlay with the image */
     color: white;
     text-align: center;
-}
-#main-image-image {
-height: auto;
-width: 500px;
+    display:flex;
 }
 
 #main-image-title-box {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    height: 200px;  /*Ensures a fixed height */
-}
-#main-image-title {
-    text-transform: uppercase;
-    max-width: 200px; /* Limits the width */
-    text-align: center; /* Ensures text stays centered */
+    height: 100%;
+    align-items: center;
 }
 
-/*contact form */
+h2{text-transform: uppercase;
+    font-size:large;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight:normal;
+    unicode-bidi: isolate;
+}
+#main-image-title { /*h2 title's id for direct influence*/
+    text-transform: uppercase;
+    max-width: 400px;
+    text-align: center; 
+    font-size: xx-large;
+}
+#main-title-right{margin-top: 25px;}
+
+
+/*contact form section 
+Contact form DOM structure: 
+section id="contact"
+    h2 id="contactH2"
+    p id="pContact"             x id i didn't use
+    div id="contactForm0"
+        form id="contactForm1"
+            div id="contactForm2"
+                label
+                label
+                button class="button-3"
+*/
 #contact{
     display: flex;
     justify-content: center; 
     flex-direction: column;
     align-items: center;
+    margin-top: 25px;
 }
+#pContact{width:75%;}
+
+#contactH2{font-weight: bold;}
 #contactForm0 {
     display: flex;
-    justify-content: center; 
-    flex-direction: column;
-    align-items: center;
+
 }
 #contactForm1 {
-    width: 400px;
+    width: 75%;
     height: 200px;
     display: flex;
     flex-direction: row ;
@@ -172,17 +217,21 @@ width: 500px;
     align-items: center;
 }
 #contactForm2{ 
-    width: 400px;
-    height: 200px;
-    margin: 10px;
     padding-left: 10px;
-    display:flex;
+    width:100%;
+    display: flex;
     flex-direction: row ;
     justify-content: center; 
     align-items: center;
 }
-
-
+#contactForm3Left{    
+    width:300px;
+}
+#contactForm3Middle{    
+    width:300px;
+}
+.input{ border: solid 1px rgba(56, 18, 126, 0.781);}
+/*  contact section end */
 
 
 /*2.4. Boutons 
@@ -198,8 +247,6 @@ button-2    <div id="carouselBack" class="button-2">
     padding: 10px 20px;
     border: none;
 }
-
-
 .button-2 {
     width: 30px;
     height: 30px;
@@ -225,7 +272,6 @@ button-2    <div id="carouselBack" class="button-2">
     transform: translateY(-50%);
     z-index: 10; /* Ensures it's above the carousel */
 }
-
 #carouselForward {
     display:flex;
     position: absolute;
@@ -234,8 +280,6 @@ button-2    <div id="carouselBack" class="button-2">
     transform: translateY(-75%);
     z-index: 10; /* Keeps it visible */
 }
-
-
 .button-3 {
     background: #D51246;
     color: white;
@@ -243,37 +287,44 @@ button-2    <div id="carouselBack" class="button-2">
     border: none;
 }
 
+
+
 /*2.5. Responsive (media queries) 
 • Gérer l’adaptabilité du carrousel sur : 
 o Tablettes : 900px 
 o Mobiles : 600px 
 • Adapter les blocs pour qu’ils s’empilent en colonne*/
 
-
+/*Footer section */
 footer {
     text-align: center;
     background: #333;
     color: white;
     padding: 20px;
+    height: 150px;
+    padding-top: 50px;
 }
-
+#footerLine {    
+    background: #333;
+    height:30px;
+    width:100%;
+    margin-bottom: 2px;
+}
+#footerText{
+    margin-top: 25px;
+}
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
 }
-
-
-
-
-
+#footerText{
+    color:gray;
+}
 
 
 
 /*Bonus */
-
-
-
 nav a:hover {
     color: #ffa600;
 }
@@ -286,16 +337,16 @@ nav a:click {
 
 
 
-/*Carousel instructions: 
+/*Carousel Section
+instructions: 
 Responsive (media queries) 
 • Gérer l’adaptabilité du carrousel sur : 
 o Tablettes : 900px 
 o Mobiles : 600px 
 • Adapter les blocs pour qu’ils s’empilent en colonne 
-
-
-carousel code indention in Dom
-section id="possibility"
+*/
+/*Carousel Dom structure:
+ section id="possibility"
     div id="carouselBack" class="button-2"         = back Button
     div class="carousel"
         id="carousel-item-1" class="carousel-item" = Carosel items 1 - 3 each has div class="left"   div class="right" 
@@ -307,13 +358,11 @@ section id="possibility"
 #possibility { 
     position: relative;
     width: 100%;
-   /*max-width: 100vw;*/
     height: 25%;
-    
 }
-.carousel-bg {
-    width: 90%; /* Makes it take up half the screen */
-    height: 100%; /* Maintains aspect ratio */
+.carousel-bg {  /*image x3 dans la carousel*/
+    width: 90%; 
+    height: 100%; 
     display: block;
 }
 .carousel {
@@ -333,8 +382,14 @@ section id="possibility"
     width: 100%;
     background-color: white;
 }
-.left{width:50%;}
-.right{width:50%;}
+.carouselLeft{
+    width:50%;
+
+}
+.carouselRight{
+    width:50%;
+    margin-top: 75px;
+}
 .carousel-item.active {
     opacity: 1
 }
@@ -342,8 +397,5 @@ section id="possibility"
 /* end of carousel  */
 
 
-
-
-.input{ border: solid 1px rgba(56, 18, 126, 0.781);}
 
 
