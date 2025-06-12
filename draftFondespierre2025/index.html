@@ -9,7 +9,7 @@
 <body>
 <div class="wrapper">
     <header><!-- entete du page Logo, Nav et Sombre Button -->
-        <div id="headerLeft"><h1>BeWeb<span class="orange">.</span></h1></div>
+        <div id="headerLeft"><h1 id="Logo">BeWeb<span class="orange">.</span></h1></div>
         <div id="headerRight">
         <nav> 
             <ul>
@@ -25,50 +25,50 @@
 
     <section id="main-image"> <!--Main image phrase d'accroche avec un grande image du fond : une femme qui sourit devant un ordinateur-->
         <div id="main-image-title-box">
-            <h2 id="main-image-title">
-                ORGANISEZ VOTRE APPRENTISSAGE 
-                <strong>SUR MESURE</strong>
-            </h2>
-            <button class="button-1">
-                Par ici
-            </button>
+           <div id="main-title-left">
+                <h2 id="main-image-title">ORGANISEZ VOTRE APPRENTISSAGE<br><strong> SUR MESURE</strong></h2>
+            </div>
+            <div id="main-title-right">
+                <button class="button-1">
+                    Par ici
+                </button>
+            </div>
         </div>
     </section>
     <section id="steps"> <!-- Ici les etapes Planifier Organiser et Développer -->
         <div class="step-item">
             
             <img src="images/steps-icon-1.png"  alt="Icône de liste de contrôle : planchette à pince avec cases cochées." class="icon">
-            <h3>Planifier</h3>
+            <h3 class="stepH3">Planifier</h3>
             <p id="Planifier" class="stepsText">Confiez-nous vos rêves de réussite : nous trouverons la formation qui comblera vos attentes.</p>
         </div>
         <div class="step-item">
             
             <img src="images/steps-icon-2.png" alt="Illustration d'une étagère avec plusieurs compartiments contenant des objets de formes variées." class="icon">
-            <h3>Organiser</h3>
+            <h3 class="stepH3">Organiser</h3>
             <p id="Organiser" class="stepsText">Bénéficiez de l'expertise de nos spécialistes de chaque parcours. Ils vous accompagneront dans la réalisation de votre parcours.</p>
         </div>
         <div class="step-item">
             
             <img src="images/steps-icon-3.png" alt="Illustration d'une personne assise à un bureau, travaillant sur un ordinateur portable affichant des symboles de programmation." class="icon">
-            <h3>Développer</h3>
+            <h3 class="stepH3">Développer</h3>
             <p id="Developper" class="stepsText">
             Nous nous chargerons de faire en sorte que vous deveniez développeur à travers des projets proches de la réalité.    
             </p>
         </div>
     </section>
 
-    <section id="possibility"> <!-- Ici les 3 certifications -->
+    <section id="possibility"> <!-- Ici les 3 certifications du Carousel -->
         <div id="carouselBack" class="button-2">
             <
         </div>
         <div class="carousel">
-
             <div id="carousel-item-1" class="carousel-item">
-                <div class="left">
-                <img src="images/article-image-1.png" alt="image d'un table avec un diplome enroulé" class="carousel-bg">
+                <div class="carouselLeft">                
+                    <img src="images/article-image-1.png" alt="image d'un table avec un diplome enroulé" class="carousel-bg">
                 </div>
                 
-                <div class="right">
+                <div class="carouselRight">
                     <h3>DWWM (niveau 5)</h3>
                     <p id="DWWM">
                         Le Titre Professionnel Développeur Web et Web Mobile (DWWM) est une certification de niveau 5 (BAC+2) délivrée par le Ministère du Travail. Il permet aux apprenants de maîtriser les langages et outils essentiels à la création de sites web et d’applications mobiles sécurisées. Cette formation ouvre des opportunités pour travailler en entreprise ou en tant qu’indépendant dans le secteur du numérique.
@@ -78,10 +78,10 @@
             </div>
 
             <div id="carousel-item-2" class="carousel-item">
-                <div class= "left">
+                <div class= "carouselLeft">
                 <img src="images/article-image-2.png" alt="un table avec un chapeau de ceremonie de diplome avec un diplome enroulé devant" class="carousel-bg">
                 </div>
-                <div class= "right">
+                <div class= "carouselRight">
                     <h3>CDA (niveau 6)</h3>
                     <p id="CDA">Le Titre Professionnel Concepteur Développeur d'Applications (CDA) est une certification de niveau 6 (BAC+3/4) qui permet d'acquérir des compétences avancées en développement logiciel et gestion de projets numériques. Cette formation prépare les apprenants à concevoir, programmer et optimiser des applications web et mobiles en utilisant des technologies modernes. Les diplômés peuvent évoluer vers des postes tels que développeur full-stack, ingénieur logiciel ou chef de projet IT. 
                     <a href="buttonCDA" class="button-carousel">Plus d'infos</a>
@@ -90,10 +90,10 @@
             </div>
 
             <div id="carousel-item-3" class="carousel-item">
-                <div class= "left">
+                <div class= "carouselLeft">
                     <img src="images/article-image-3.png" alt="un table en bois brun avec un chapeau de ceremonie de diplome carré et un diplomé enroulé avec un ribbon rouge" class="carousel-bg">
                 </div>
-                <div class= "right">
+                <div class= "carouselRight">
                     <h3>TSSR (niveau 5)</h3>
                 
                     <p id="TSSR">Le Titre Professionnel Technicien Supérieur Systèmes et Réseaux (BAC+2)
@@ -110,24 +110,47 @@
     </section>
 
     <section id="contact"> <!-- Ici le form de contact -->
-        <h2>Contactez-nous</h2>
-        <p id="pContact">Chez BeWeb, nous savons qu'apprendre est une aventure humaine mais également un engagement important pour vous. C'est pourquoi nous mettons un point d'honneur à prendre en compte chacune de vos attentes pour vous aider dans la préparation de votre apprentissage.</p>
+        <h2 id="contactH2">Contactez-nous</h2>
+        <p id="pContact">
+            Chez BeWeb, nous savons qu'apprendre est une aventure humaine mais également un engagement important pour vous. C'est pourquoi nous mettons un point d'honneur à prendre en compte chacune de vos attentes pour vous aider dans la préparation de votre apprentissage.
+        </p>
         <div id="contactForm0">
             <form id="contactForm1">
                 <div id="contactForm2">
-                    <label>Nom: <input type="text" name="name" class="input" placeholder="Votre nom"></label>
-                    <br>
-                    <label>Email: <input type="email" name="email" class="input" placeholder="Votre email"></label>
-                    <br>
-                    <button class="button-3">OK</button>
+                    <div id="contactForm3Left">
+                        <label>
+                            Nom: 
+                            <input type="text" name="name" class="input" placeholder="Votre nom">
+                        </label>
+                    </div>
+
+                    <div id="contactForm3Middle">
+                        <label>
+                            Email: 
+                            <input type="email" name="email" class="input" placeholder="Votre email">
+                        </label>
+                    </div>
+                    <div id="contactForm3Right">
+                        <button class="button-3">
+                            OK
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
     </section>
-
+    <div id="footerLine"></div>
     <footer> <!-- les details de fin de page -->
-        <h1>BeWeb<span class="orange">.</span></h1>
-        <p>&copy; 2025 Tous droits réservés.</p>
+        <div>
+            <h1>
+                BeWeb<span class="orange">.</span>
+            </h1>
+        </div>
+        <div>
+            <p id="footerText">
+                Copyright &copy; 2025 Tous droits réservés.
+            </p>
+        </div>
     </footer>
 </div>
     <script src="script.js"></script>
