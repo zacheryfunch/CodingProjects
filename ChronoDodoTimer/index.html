@@ -6,20 +6,38 @@
 <body>
 
 <div id="timer">
-    <div id="timerDisplay">00:00:00</div>
+    #timerDisplay: 
+    <div id="timerDisplay">
+        00:00:00
+    </div>
     <div id="buttons">
+        <button id="set">Set</button> 
         <button id="start">Start</button> 
         <button id="stop">Stop</button> 
-        <button id="reset">Reset</button>
-        </div>
+        <button id="reset">X Reset</button>
+    </div>
+</div>
+<br>
+<div id="display">
+    #actionDisplay: 
+    <input id="actionDisplay" placeholder="Wait 1min">
+    <br>
+    Wait 1 Min 
+</div>
+<br>
+    #currentRound: 
+    <div id="currentRound">
+        Round 1 Step 1
+    </div>
+    <br>
+    #programSelect: 
+    <input type="list" id="programSelect" placeholder="Select Program">
+    <br>
+    timeValue: <div id="timeValue">
+        timeValue
     </div>
 
-    <div id="display">
-    <input id="actionDisplay"placeholder="Wait 1min">Wait 1 Min </div>
-    <div id="currentRound">Round 1 Step 1</div>
-    <input type="list" id="programSelect" placeholder="Select Program">
 
-</div>
 <!--/*    IDs used list (Dom Respected positions)
      timer(all of the timer elements),
         timerDisplay(00:00:00),
