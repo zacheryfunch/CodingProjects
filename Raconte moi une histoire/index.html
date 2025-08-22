@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to StoryTime!</title>
+  <style>
+    :root {
+      --primary: #56CCF2;      /* Sky Blue */
+      --accent: #F0F8FF;       /* Cloud White */
+      --background: #EDE7F6;   /* Pale Lavender */
+      --text: #2D2D5A;         /* Navy */
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: var(--accent);
+      border-radius: 12px;
+      padding: 10px;
+      width: calc(33.333% - 40px);
+      box-sizing: border-box;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .card p {
+      margin-top: 10px;
+      font-size: 1em;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: calc(50% - 40px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to StoryTime!</h1>
+  <div class="grid">
+    <a class="card" href="9782352413882PoilsDeLoup/PoilsDeLoup.pdf">
+      <img src="9782352413882PoilsDeLoup/9782352413882PoilsDeLoup.jpg" alt="Story 1">
+      <p>Poils de Loup PDF
+        Durée: 9m41 
+        Lecteur: Zachery et Sunya 3 ans </p>
+    <a class="card" href="9782352413882PoilsDeLoup/PoilsDeLoup.html">
+      <img src="9782352413882PoilsDeLoup/9782352413882PoilsDeLoup.jpg" alt="Story 1">
+      <p>Poils de Loup Story
+        Durée: 9m41 
+        Lecteur: Zachery et Sunya 3 ans </p>
+    </a>
+    <a class="card" href="9782352413882PoilsDeLoup/PoilsDeLoupPDFMP3.html">
+      <img src="9782352413882PoilsDeLoup/9782352413882PoilsDeLoup.jpg" alt="Story 1">
+      <p>Poils de Loup PDF+MP3
+        Durée: 9m41 
+        Lecteur: Zachery et Sunya 3 ans </p>
+    </a>
+    <a class="card" href="story4.html">
+      <img src="https://via.placeholder.com/300x200?text=Story+4" alt="Story 4">
+      <p>Captain Kitty’s Space Voyage</p>
+    </a>
+    <a class="card" href="story5.html">
+      <img src="https://via.placeholder.com/300x200?text=Story+5" alt="Story 5">
+      <p>Underwater Wonders</p>
+    </a>
+    <a class="card" href="story6.html">
+      <img src="https://via.placeholder.com/300x200?text=Story+6" alt="Story 6">
+      <p>The Forest of Talking Trees</p>
+    </a>
+    <a class="card" href="story7.html">
+      <img src="https://via.placeholder.com/300x200?text=Story+7" alt="Story 7">
+      <p>Princess Penny and the Dragon</p>
+    </a>
+    <a class="card" href="story8.html">
+      <img src="https://via.placeholder.com/300x200?text=Story+8" alt="Story 8">
+      <p>Robot Rex Saves the Day</p>
+    </a>
+    <a class="card" href="story9.html">
+      <img src="https://via.placeholder.com/300x200?text=Story+9" alt="Story 9">
+      <p>The Snowflake Mystery</p>
+    </a>
+  </div>
+</body>
+</html>
