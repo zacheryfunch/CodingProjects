@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Poils de Loup</title>
+  <style>
+    :root {
+      --primary: #56CCF2;
+      --accent: #F0F8FF;
+      --background: #EDE7F6;
+      --text: #2D2D5A;
+      --frame: #D1C4E9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: var(--background);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .storybook-frame {
+      background-color: var(--accent);
+      border: 12px solid var(--frame);
+      border-radius: 30px;
+      padding: 30px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    .audio-player {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .audio-player audio {
+      display: none;
+    }
+
+    .play-button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      font-size: 2em;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .play-button:hover {
+      background-color: #2D9CDB;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="storybook-frame">
+    <h1>Poils de Loup</h1>
+
+    <div class="audio-player">
+      <audio id="audio" src="SPoilsDeLoup02-2024-3ans.m4a"></audio>
+      <button class="play-button" onclick="document.getElementById('audio').play()">▶</button>
+      <p>Écouter l'histoire</p>
+    </div>
+
+    <iframe src="PoilsDeLoup.pdf"></iframe>
+  </div>
+</body>
+</html>
